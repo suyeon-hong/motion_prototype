@@ -1,3 +1,5 @@
+let speed = 1000;
+
 // visual letter motion
 const letter1 = $("#visual .inner >h1");
 const letter2 = $("#visual .inner >h2");
@@ -85,29 +87,27 @@ function visualMoving(index){
 }
 
 //visual image motion
-const $img = $("#visual .wrapbox img").on("click", function(e){
+const $btnClose = $("#visual .detail .close");
+const $img = $("#visual .wrapbox img")
+
+$img.on("click", function(e){
     e.preventDefault();
     let imgSrc = $(this).attr("src");
+    let index = $(this).closest("article").index();
 
-    $("#visual .detail img").remove();
-    $("#visual").append("<div class='inner detail'>");
-    $("#visual .detail").append(
-        $("<img>").attr({src: imgSrc}).css({
-            clipPath: "inset(80% 80% 0 0)",
-            position: "absolute",
-            left: "15%",
-            bottom: "30px",
-            opacity: 0,
-            objectFit: "contain",
-            transition: "1s"
-        }).animate({
-            opacity: 1,
-        }, speed, function(){
-            $(this).css({
-                clipPath: "inset(0 0 0 0)",
-                left: 0,
-                bottom: 0
-            })
-        })
-    );
+
+    $("#visual .detail .pic img").attr({src: imgSrc});
+    $("#visual .detail .thumb img").attr({src: imgSrc});
+
+    $("#visual .detail").addClass("on");
+    $("#visual .detail").fadeIn(500);
+    
 });
+
+$btnClose.on("click", function(e){
+    e.preventDefault();
+
+    $("#visual .detail").fadeOut(500);
+    $("#visual .detail").removeClass("on");
+
+})
