@@ -281,7 +281,7 @@ body{
                 padding: 100px 50px;
     
                 h1{
-                    font: 500 70px/1 $font;
+                    font: 500 50px/1 $font;
                     color: #111;
                     margin-bottom: 100px;
 
@@ -305,7 +305,7 @@ body{
                     position: relative;
     
                     &::before{
-                        content: "women";
+                        content: "lorem";
                         display: block;
                         font: 500 12px/3 $font;
                         position: absolute;
@@ -334,7 +334,7 @@ body{
                     p{
                         float: left;
                         width: 60%;
-                        font: 400 14px/1.6 $font;
+                        font: 400 13px/1.6 $font;
                         color: #555;
                     }
                     .thumb{

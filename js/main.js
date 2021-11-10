@@ -95,11 +95,17 @@ $img.on("click", function(e){
     e.preventDefault();
     let imgSrc = $(this).attr("src");
     let index = $(this).closest("article").index();
+    let tit1 = $("#visual .wrapbox >.wrap").eq(index).find("article").eq(index).find("h2").text();
+    let tit2 = $("#visual .wrapbox >.wrap").eq(index).find("article").eq(index).find("li").eq(0).text();
+    let desc = $("#visual .wrapbox >.wrap").eq(index).find("article").eq(index).find(".wrap p").text();
 
     clearInterval(timer3);
 
     $("#visual .detail .pic img").attr({src: imgSrc});
     $("#visual .detail .thumb img").attr({src: imgSrc});
+    $("#visual .detail h1").text(tit1);
+    $("#visual .detail h2").text(tit2);
+    $("#visual .detail .con p").text(desc);
 
     $("#visual .detail").fadeIn(0, function(){
         $("#visual .detail").addClass("on");

@@ -229,7 +229,7 @@ body {
         height: 100%;
         padding: 100px 50px; }
         #visual .detail .inner .con h1 {
-          font: 500 70px/1 "Gothic A1";
+          font: 500 50px/1 "Gothic A1";
           color: #111;
           margin-bottom: 100px; }
           #visual .detail .inner .con h1::before {
@@ -249,7 +249,7 @@ body {
           margin-bottom: 50px;
           position: relative; }
           #visual .detail .inner .con h2::before {
-            content: "women";
+            content: "lorem";
             display: block;
             font: 500 12px/3 "Gothic A1";
             position: absolute;
@@ -274,7 +274,7 @@ body {
           #visual .detail .inner .con .wrap p {
             float: left;
             width: 60%;
-            font: 400 14px/1.6 "Gothic A1";
+            font: 400 13px/1.6 "Gothic A1";
             color: #555; }
           #visual .detail .inner .con .wrap .thumb {
             float: right;
