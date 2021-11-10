@@ -101,7 +101,7 @@ $img.on("click", function(e){
     $("#visual .detail .pic img").attr({src: imgSrc});
     $("#visual .detail .thumb img").attr({src: imgSrc});
 
-    $("#visual .detail").fadeIn(1000, function(){
+    $("#visual .detail").fadeIn(0, function(){
         $("#visual .detail").addClass("on");
     });
     
