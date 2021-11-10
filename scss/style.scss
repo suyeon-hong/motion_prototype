@@ -32,7 +32,7 @@ body{
         width: 1180px;
         margin: 0 auto;
         padding: 30px 0;
-        overflow: hidden;
+        // overflow: hidden;
         position: relative;
 
         &.wrapbox{
@@ -55,13 +55,18 @@ body{
             top: 30px;
             left: 0;
             display: none;
+            perspective: 1000px;
 
+            &:nth-child(1){
+                display: block;
+            }
             article{
                 float: left;
                 width: 380px;
                 margin-right: 20px;
                 border: 1px solid #333;
                 background: #f9f9f9;
+                animation: rotate 3s infinite;
 
                 h1{
                     font: 600 16px/1 $font;
@@ -396,4 +401,9 @@ body{
             }
         }
     }
+}
+
+@keyframes rotate{
+    0%{transform: rotateY(0deg)}
+    100%{transform: rotateY(360deg)}
 }

@@ -43,10 +43,13 @@ function letterMotion(item, delay){
 // visual tab button
 let i=0;
 
-setTimeout(function(){
-    $("#visual .wrapbox >.wrap").eq(0).slideDown(speed);
-}, speed/2 );
+let rotate_timer = setInterval(function(){
+    (i >= 2) ? i = 0 : i++;
+    $("#visual .wrapbox >.wrap").hide();
+    $("#visual .wrapbox >.wrap").eq(i).show();
+}, 3000);
 
+/*
 let timer3 = setInterval(function(){
     (i >= 2) ? i=0 : i++;
     visualMoving(i);
@@ -79,13 +82,16 @@ $("#visual .wrapbox article").on("mouseleave", function(){
 function visualMoving(index){
     $("#visual .filter li a").removeClass("on");
     $("#visual .filter li").eq(index + 1).children("a").addClass("on");
-    $("#visual .wrapbox >.wrap").slideUp(speed/2);
+    $("#visual .wrapbox >.wrap").slideUp(speed/1.5);
     setTimeout(function(){
         $("#visual .wrapbox >.wrap").eq(index).slideDown(speed);
-    }, speed/2, function(){
+    }, speed/1.5, function(){
         enableClick = true;
     });
 }
+*/
+
+
 
 //visual detail page
 const $btnClose = $("#visual .detail .close");
