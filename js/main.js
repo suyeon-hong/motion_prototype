@@ -1,4 +1,5 @@
 let speed = 1000;
+let enableClick = true;
 
 // visual letter motion
 const letter1 = $("#visual .inner >h1");
@@ -86,7 +87,7 @@ function visualMoving(index){
     });
 }
 
-//visual image motion
+//visual detail page
 const $btnClose = $("#visual .detail .close");
 const $img = $("#visual .wrapbox img")
 
@@ -95,19 +96,20 @@ $img.on("click", function(e){
     let imgSrc = $(this).attr("src");
     let index = $(this).closest("article").index();
 
+    clearInterval(timer3);
 
     $("#visual .detail .pic img").attr({src: imgSrc});
     $("#visual .detail .thumb img").attr({src: imgSrc});
 
-    $("#visual .detail").addClass("on");
-    $("#visual .detail").fadeIn(500);
+    $("#visual .detail").fadeIn(1000, function(){
+        $("#visual .detail").addClass("on");
+    });
     
 });
 
 $btnClose.on("click", function(e){
     e.preventDefault();
 
-    $("#visual .detail").fadeOut(500);
     $("#visual .detail").removeClass("on");
-
-})
+    $("#visual .detail").fadeOut(1000);
+});
