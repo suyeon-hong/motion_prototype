@@ -41,55 +41,48 @@ function letterMotion(item, delay){
 
 
 // visual tab button
+const $wrap = $("#visual .wrapbox >.wrap");
+const $section = $("#visual .wrapbox section");
+const $front = $("#visual .front");
+const $back = $("#visual .back");
+const $btns = $("#visual .filter li");
 let i=0;
 
-let rotate_timer = setInterval(function(){
-    (i >= 2) ? i = 0 : i++;
-    $("#visual .wrapbox >.wrap").hide();
-    $("#visual .wrapbox >.wrap").eq(i).show();
-}, 3000);
-
-/*
 let timer3 = setInterval(function(){
-    (i >= 2) ? i=0 : i++;
-    visualMoving(i);
+    rotate();
 }, speed*3);
 
-$("#visual .filter li a").on("click", function(e){
-    e.preventDefault();
-    let target = $(this).parent().index() - 1;
-    let isActive = $(this).hasClass("on");
-
-    if(isActive) return;
-    if(enableClick){
-        enableClick = false;
-        clearInterval(timer3);
-        visualMoving(target);
-    }
-});
-
-$("#visual .wrapbox article").on("mouseenter", function(){
-    clearInterval(timer3);
-});
-$("#visual .wrapbox article").on("mouseleave", function(){
-    timer3 = setInterval(function(){
-        (i >= 2) ? i=0 : i++;
-        visualMoving(i);
-    }, speed*3);
-});
-
-
-function visualMoving(index){
-    $("#visual .filter li a").removeClass("on");
-    $("#visual .filter li").eq(index + 1).children("a").addClass("on");
-    $("#visual .wrapbox >.wrap").slideUp(speed/1.5);
+function rotate(){
+    (i >= 2) ? i = 0 : i++;
+    $section.addClass("on");
+    $front.css({zIndex: 2});
+    $back.css({zIndex: 1});
     setTimeout(function(){
-        $("#visual .wrapbox >.wrap").eq(index).slideDown(speed);
-    }, speed/1.5, function(){
-        enableClick = true;
-    });
+        $section.removeClass("on");
+        $front.css({zIndex: 1});
+        $back.css({zIndex: 2});
+    }, speed*2);
+    setTimeout(function(){
+        $wrap.fadeOut();
+        $wrap.eq(i).fadeIn();
+    }, speed*2.5);
 }
-*/
+
+$btns.on("click", function(e){
+    e.preventDefault();
+    let index = $(this).index() - 1;
+
+    clearInterval(timer3);
+
+    $btns.children("a").removeClass("on");
+    $(this).children("a").addClass("on");
+
+    $section.addClass("on");
+    $front.css({zIndex: 2});
+    $back.css({zIndex: 1});
+    $wrap.fadeOut();
+    $wrap.eq(index).fadeIn();
+})
 
 
 
@@ -105,7 +98,6 @@ $img.on("click", function(e){
     let tit2 = $("#visual .wrapbox >.wrap").eq(index).find("article").eq(index).find("li").eq(0).text();
     let desc = $("#visual .wrapbox >.wrap").eq(index).find("article").eq(index).find(".wrap p").text();
 
-    clearInterval(timer3);
 
     $("#visual .detail .pic img").attr({src: imgSrc});
     $("#visual .detail .thumb img").attr({src: imgSrc});
