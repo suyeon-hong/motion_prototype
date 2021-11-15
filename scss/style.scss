@@ -80,7 +80,7 @@ $mobile : 539px;
             overflow: hidden;
 
             .slider-wrap{
-                width: calc(100% / 3 * 5);
+                width: calc(100% / 3 * 8);
                 height: 100%;
 
                 &::after{
@@ -90,29 +90,34 @@ $mobile : 539px;
                 }
                 .slider{
                     float: left;
-                    width: calc(100% / 5);
+                    width: calc(100% / 8);
                     height: 100%;
                     padding: 350px 20px 180px;
+                    cursor: pointer;
 
                     .bg{
                         width: 100%;
                         height: 100%;
                         background: #bbb;
                         position: relative;
+                        transition: .6s;
 
                         .model{
-                            width: 50%;
-                            height: 140%;
+                            width: 180px;
+                            height: 470px;
                             background: #eee;
                             position: absolute;
                             bottom: 0;
                             left: 0;
                         }
+                        &:hover{
+                            transform: scale(1.05);
+                        }
                     }
                     &:nth-of-type(even){
                         .bg{
                             background: #555;
-                            transform: translateY(-50px);
+                            margin-top: -50px;
                         }
                     }
                 }
@@ -135,64 +140,79 @@ $mobile : 539px;
             .prev{
                 position: absolute;
                 right: 150px;
-                bottom: 70px;
+                bottom: 65px;
                 display: block;
                 width: 70px;
-                height: 2px;
-                background: #555;
+                height: 20px;
 
-                &::before{
-                    content: '';
+                span{
                     display: block;
-                    width: 10px;
+                    width: 100%;
                     height: 2px;
-                    background: inherit;
-                    transform: rotate(-45deg);
-                    transform-origin: left center;
-                }
-                &::after{
-                    content: '';
-                    display: block;
-                    width: 10px;
-                    height: 2px;
-                    background: inherit;
-                    transform: rotate(45deg);
-                    transform-origin: left center;
-                    margin-top: -2px;
+                    background: #555;
+                    margin-top: 10px;
+
+                    &::before{
+                        content: '';
+                        display: block;
+                        width: 10px;
+                        height: 2px;
+                        background: inherit;
+                        transform: rotate(-45deg);
+                        transform-origin: left center;
+                    }
+                    &::after{
+                        content: '';
+                        display: block;
+                        width: 10px;
+                        height: 2px;
+                        background: inherit;
+                        transform: rotate(45deg);
+                        transform-origin: left center;
+                        margin-top: -2px;
+                    }
                 }
             }
             .next{
                 position: absolute;
                 right: 50px;
-                bottom: 70px;
+                bottom: 65px;
                 display: block;
                 width: 70px;
-                height: 2px;
-                background: #555;
+                height: 20px;
 
-                &::before{
-                    content: '';
+                span{
                     display: block;
-                    width: 10px;
+                    width: 100%;
                     height: 2px;
-                    background: inherit;
-                    transform: rotate(-45deg);
-                    transform-origin: right center;
-                    position: absolute;
-                    right: 0;
-                    top: 0;
-                }
-                &::after{
-                    content: '';
-                    display: block;
-                    width: 10px;
-                    height: 2px;
-                    background: inherit;
-                    transform: rotate(45deg);
-                    transform-origin: right center;
-                    position: absolute;
-                    right: 0;
-                    bottom: 0;
+                    background: #555;
+                    margin-top: 10px;
+                    position: relative;
+
+                    &::before{
+                        content: '';
+                        display: block;
+                        width: 10px;
+                        height: 2px;
+                        background: inherit;
+                        transform: rotate(-45deg);
+                        transform-origin: right center;
+                        position: absolute;
+                        right: 0;
+                        top: 0;
+                    }
+                    &::after{
+                        content: '';
+                        display: block;
+                        width: 10px;
+                        height: 2px;
+                        background: inherit;
+                        transform: rotate(45deg);
+                        transform-origin: right center;
+                        position: absolute;
+                        right: 0;
+                        bottom: 0;
+                    }
                 }
             }
         }

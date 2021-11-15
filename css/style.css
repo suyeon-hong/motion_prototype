@@ -84,7 +84,7 @@ a {
       position: relative;
       overflow: hidden; }
       #visual .wrap .frame .slider-wrap {
-        width: calc(100% / 3 * 5);
+        width: calc(100% / 3 * 8);
         height: 100%; }
         #visual .wrap .frame .slider-wrap::after {
           content: '';
@@ -92,24 +92,28 @@ a {
           clear: both; }
         #visual .wrap .frame .slider-wrap .slider {
           float: left;
-          width: calc(100% / 5);
+          width: calc(100% / 8);
           height: 100%;
-          padding: 350px 20px 180px; }
+          padding: 350px 20px 180px;
+          cursor: pointer; }
           #visual .wrap .frame .slider-wrap .slider .bg {
             width: 100%;
             height: 100%;
             background: #bbb;
-            position: relative; }
+            position: relative;
+            transition: .6s; }
             #visual .wrap .frame .slider-wrap .slider .bg .model {
-              width: 50%;
-              height: 140%;
+              width: 180px;
+              height: 470px;
               background: #eee;
               position: absolute;
               bottom: 0;
               left: 0; }
+            #visual .wrap .frame .slider-wrap .slider .bg:hover {
+              transform: scale(1.05); }
           #visual .wrap .frame .slider-wrap .slider:nth-of-type(even) .bg {
             background: #555;
-            transform: translateY(-50px); }
+            margin-top: -50px; }
       #visual .wrap .frame .pagebar {
         position: absolute;
         bottom: 70px;
@@ -125,57 +129,68 @@ a {
       #visual .wrap .frame .prev {
         position: absolute;
         right: 150px;
-        bottom: 70px;
+        bottom: 65px;
         display: block;
         width: 70px;
-        height: 2px;
-        background: #555; }
-        #visual .wrap .frame .prev::before {
-          content: '';
+        height: 20px; }
+        #visual .wrap .frame .prev span {
           display: block;
-          width: 10px;
+          width: 100%;
           height: 2px;
-          background: inherit;
-          transform: rotate(-45deg);
-          transform-origin: left center; }
-        #visual .wrap .frame .prev::after {
-          content: '';
-          display: block;
-          width: 10px;
-          height: 2px;
-          background: inherit;
-          transform: rotate(45deg);
-          transform-origin: left center;
-          margin-top: -2px; }
+          background: #555;
+          margin-top: 10px; }
+          #visual .wrap .frame .prev span::before {
+            content: '';
+            display: block;
+            width: 10px;
+            height: 2px;
+            background: inherit;
+            transform: rotate(-45deg);
+            transform-origin: left center; }
+          #visual .wrap .frame .prev span::after {
+            content: '';
+            display: block;
+            width: 10px;
+            height: 2px;
+            background: inherit;
+            transform: rotate(45deg);
+            transform-origin: left center;
+            margin-top: -2px; }
       #visual .wrap .frame .next {
         position: absolute;
         right: 50px;
-        bottom: 70px;
+        bottom: 65px;
         display: block;
         width: 70px;
-        height: 2px;
-        background: #555; }
-        #visual .wrap .frame .next::before {
-          content: '';
+        height: 20px; }
+        #visual .wrap .frame .next span {
           display: block;
-          width: 10px;
+          width: 100%;
           height: 2px;
-          background: inherit;
-          transform: rotate(-45deg);
-          transform-origin: right center;
-          position: absolute;
-          right: 0;
-          top: 0; }
-        #visual .wrap .frame .next::after {
-          content: '';
-          display: block;
-          width: 10px;
-          height: 2px;
-          background: inherit;
-          transform: rotate(45deg);
-          transform-origin: right center;
-          position: absolute;
-          right: 0;
-          bottom: 0; }
+          background: #555;
+          margin-top: 10px;
+          position: relative; }
+          #visual .wrap .frame .next span::before {
+            content: '';
+            display: block;
+            width: 10px;
+            height: 2px;
+            background: inherit;
+            transform: rotate(-45deg);
+            transform-origin: right center;
+            position: absolute;
+            right: 0;
+            top: 0; }
+          #visual .wrap .frame .next span::after {
+            content: '';
+            display: block;
+            width: 10px;
+            height: 2px;
+            background: inherit;
+            transform: rotate(45deg);
+            transform-origin: right center;
+            position: absolute;
+            right: 0;
+            bottom: 0; }
 
 /*# sourceMappingURL=style.css.map */
