@@ -27,6 +27,7 @@ $mobile : 539px;
         font: lighter 24px/1 'arial';
         color: #111;
         letter-spacing: 40px;
+        width: 700px;
         position: absolute;
         top: 30px;
         left: 50%;
@@ -44,13 +45,13 @@ $mobile : 539px;
     .wrap{
         width: 100%;
         height: 100%;
-        padding: 0 50px;
 
         .con{
             float: left;
             width: 250px;
             height: 100%;
             padding-top: 300px;
+            padding-left: 30px;
 
             h2{
                 font: normal 28px/1.2 'arial';
@@ -69,7 +70,7 @@ $mobile : 539px;
                 height: 45px;
                 border: 1px solid #bbb;
                 text-align: center;
-                font: bold 12px/45px 'arial';
+                font: bold 11px/45px 'arial';
                 color: #111;
             }
         }
@@ -100,6 +101,7 @@ $mobile : 539px;
                         width: 100%;
                         height: 100%;
                         background: #bbb;
+                        box-shadow: -2px 15px 20px rgba(0,0,0,0.2);
                         position: relative;
                         transition: .6s;
 
