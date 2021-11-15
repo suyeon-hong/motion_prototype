@@ -32,7 +32,7 @@ let picPos = [
     },
 ]
 
-for(let i=1; i < $slider.length; i++ ){
+for(let i=1; i <= $slider.length; i++ ){
     $slider.eq(i - 1).find(".bg").css({
         backgroundImage: "url(img/bg"+ i +".jpg)"
     });
