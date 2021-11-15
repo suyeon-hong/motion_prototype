@@ -55,12 +55,8 @@ let timer3 = setInterval(function(){
 function rotate(){
     (i >= 2) ? i = 0 : i++;
     $section.addClass("on");
-    $front.css({zIndex: 2});
-    $back.css({zIndex: 1});
     setTimeout(function(){
         $section.removeClass("on");
-        $front.css({zIndex: 1});
-        $back.css({zIndex: 2});
     }, speed*2);
     setTimeout(function(){
         $wrap.fadeOut();
@@ -70,7 +66,7 @@ function rotate(){
 
 $btns.on("click", function(e){
     e.preventDefault();
-    let index = $(this).index() - 1;
+    let i = $(this).index() - 1;
 
     clearInterval(timer3);
 
@@ -78,10 +74,8 @@ $btns.on("click", function(e){
     $(this).children("a").addClass("on");
 
     $section.addClass("on");
-    $front.css({zIndex: 2});
-    $back.css({zIndex: 1});
     $wrap.fadeOut();
-    $wrap.eq(index).fadeIn();
+    $wrap.eq(i).fadeIn();
 })
 
 
