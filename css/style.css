@@ -50,7 +50,8 @@ a {
       font-weight: bold;
       font-size: 30px;
       letter-spacing: 50px;
-      text-align: right; }
+      text-align: right;
+      margin-top: 10px; }
   #visual .wrap {
     width: 100%;
     height: 100%;
@@ -79,7 +80,7 @@ a {
         color: #111; }
     #visual .wrap .frame {
       float: right;
-      width: calc(100% - 250px);
+      width: calc(100% - 270px);
       height: 100%;
       position: relative;
       overflow: hidden; }
@@ -123,9 +124,10 @@ a {
         background: #ddd; }
         #visual .wrap .frame .pagebar .bar {
           display: block;
-          width: 30%;
+          width: calc(100% / 8);
           height: 100%;
-          background: #555; }
+          background: #555;
+          transition: .4s; }
       #visual .wrap .frame .prev {
         position: absolute;
         right: 150px;

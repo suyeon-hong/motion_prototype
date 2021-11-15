@@ -38,6 +38,7 @@ $mobile : 539px;
             font-size: 30px;
             letter-spacing: 50px;
             text-align: right;
+            margin-top: 10px;
         }
     }
     .wrap{
@@ -74,7 +75,7 @@ $mobile : 539px;
         }
         .frame{
             float: right;
-            width: calc(100% - 250px);
+            width: calc(100% - 270px);
             height: 100%;
             position: relative;
             overflow: hidden;
@@ -132,9 +133,10 @@ $mobile : 539px;
 
                 .bar{
                     display: block;
-                    width: 30%;
+                    width: calc(100% / 8);
                     height: 100%;
                     background: #555;
+                    transition: .4s;
                 }
             }
             .prev{
