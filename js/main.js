@@ -3,7 +3,7 @@ const $slider = $(".slider");
 const $pagebar = $(".bar");
 const $prev = $(".wrap .prev");
 const $next = $(".wrap .next");
-const $img = $slider.find(".bg");
+const $img = $slider.find(".box");
 const $detail = $(".detail");
 const $pic = $detail.find(".pic");
 const $close = $detail.find(".close");
@@ -32,6 +32,12 @@ let picPos = [
     },
 ]
 
+for(let i=1; i < $slider.length; i++ ){
+    $slider.eq(i - 1).find(".bg").css({
+        backgroundImage: "url(../img/bg"+ i +".jpg)"
+    });
+}
+
 $prev.on("click", function(e){
     e.preventDefault();
 
@@ -52,7 +58,9 @@ $next.on("click", function(e){
 
 $img.on("click", function(){
     index = $(this).parent(".slider").index();
+    let imgBg = $(this).find(".bg").css("background");
 
+    console.log(imgBg);
     if(index > 2) index = index - num + 1;
     
     $img.eq(index).css({opacity: 0});
@@ -105,3 +113,4 @@ function next(){
     }
 
 }
+

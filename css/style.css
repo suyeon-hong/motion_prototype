@@ -102,24 +102,33 @@ a {
           height: 100%;
           padding: 300px 20px 0;
           cursor: pointer; }
-          #visual .wrap .frame .slider-wrap .slider .bg {
+          #visual .wrap .frame .slider-wrap .slider .box {
             width: 25vw;
             height: 20vw;
-            background: #bbb;
             box-shadow: -2px 15px 20px rgba(0, 0, 0, 0.2);
             position: relative;
             transition: .6s; }
-            #visual .wrap .frame .slider-wrap .slider .bg .model {
-              width: 180px;
-              height: 470px;
-              background: #eee;
+            #visual .wrap .frame .slider-wrap .slider .box .bg {
+              width: 100%;
+              height: 100%;
+              filter: saturate(50%);
+              background-attachment: fixed;
+              background-repeat: no-repeat;
+              background-position: center;
+              background-size: cover; }
+            #visual .wrap .frame .slider-wrap .slider .box .model {
+              width: 200px;
+              height: 450px;
               position: absolute;
               bottom: 0;
               left: 0; }
-            #visual .wrap .frame .slider-wrap .slider .bg:hover {
+              #visual .wrap .frame .slider-wrap .slider .box .model img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover; }
+            #visual .wrap .frame .slider-wrap .slider .box:hover {
               transform: scale(1.05); }
-          #visual .wrap .frame .slider-wrap .slider:nth-of-type(even) .bg {
-            background: #555;
+          #visual .wrap .frame .slider-wrap .slider:nth-of-type(even) .box {
             margin-top: -50px; }
       #visual .wrap .frame .pagebar {
         position: absolute;
@@ -226,6 +235,11 @@ a {
       height: 20vw;
       background: #bbb;
       transition: 1s; }
+      #visual .detail .pic img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: saturate(50%); }
     #visual .detail .con {
       width: 100%;
       height: 100%;

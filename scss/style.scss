@@ -102,29 +102,42 @@ $mobile : 539px;
                     padding: 300px 20px 0;
                     cursor: pointer;
 
-                    .bg{
+                    .box{
                         width: 25vw;
                         height: 20vw;
-                        background: #bbb;
                         box-shadow: -2px 15px 20px rgba(0,0,0,0.2);
                         position: relative;
                         transition: .6s;
+                        
 
+                        .bg{
+                            width: 100%;
+                            height: 100%;
+                            filter: saturate(50%);
+                            background-attachment: fixed;
+                            background-repeat: no-repeat;
+                            background-position: center;
+                            background-size: cover;
+                        }
                         .model{
-                            width: 180px;
-                            height: 470px;
-                            background: #eee;
+                            width: 200px;
+                            height: 450px;
                             position: absolute;
                             bottom: 0;
                             left: 0;
+
+                            img{
+                                width: 100%;
+                                height: 100%;
+                                object-fit: cover;
+                            }
                         }
                         &:hover{
                             transform: scale(1.05);
                         }
                     }
                     &:nth-of-type(even){
-                        .bg{
-                            background: #555;
+                        .box{
                             margin-top: -50px;
                         }
                     }
@@ -236,14 +249,6 @@ $mobile : 539px;
         padding: 50px 0 50px 55vw;
         background: #f7f7f7;
 
-        // &.on{
-        //     .pic{
-        //         top: 0;
-        //         left: 10vw;
-        //         width: 40vw;
-        //         height: 100%;
-        //     }
-        // }
         h2{
             font: normal 18px/1 'arial';
             color: #111;
@@ -262,6 +267,16 @@ $mobile : 539px;
             height: 20vw;
             background: #bbb;
             transition: 1s;
+
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                filter: saturate(50%);
+            }
+            .model{
+
+            }
         }
         .con{
             width: 100%;
