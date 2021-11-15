@@ -266,7 +266,6 @@ $mobile : 539px;
             left: 270px;
             width: 25vw;
             height: 20vw;
-            background: #bbb;
             transition: 1s;
 
             .bg{
@@ -294,6 +293,45 @@ $mobile : 539px;
             height: 100%;
             position: relative;
 
+            .close{
+                display: block;
+                font: bold 12px/1 'arial';
+                color: #111;
+                padding-left: 15px;
+                margin-bottom: 50px;
+                position: relative;
+
+                &::before{
+                    content: '';
+                    display: block;
+                    width: 8px;
+                    height: 2px;
+                    background: #111;
+                    transform: rotate(-45deg);
+                    transform-origin: left center;
+                    position: absolute;
+                    top: 50%;
+                    left: 0;
+                    margin-top: -1px;
+                }
+                &::after{
+                    content: '';
+                    display: block;
+                    width: 8px;
+                    height: 2px;
+                    background: #111;
+                    transform: rotate(45deg);
+                    transform-origin: left center;
+                    position: absolute;
+                    top: 50%;
+                    left: 0;
+                    margin-top: -1px;
+                }
+            }
+            h3{
+                font: bold 30px/1.2 'arial';
+                color: #111;
+            }
             .prev{
                 position: absolute;
                 left: 0;

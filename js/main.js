@@ -85,7 +85,9 @@ $close.on("click", function(e){
     e.preventDefault();
 
     $pic.css(picPos[index]);
-    $img.eq(index).css({opacity: 1});
+    setTimeout(function(){
+        $img.eq(index).css({opacity: 1});
+    }, 500);
     $(".wrap").removeClass("on");
     $detail.fadeOut(1000);
 });
