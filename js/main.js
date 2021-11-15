@@ -59,10 +59,12 @@ $next.on("click", function(e){
 $img.on("click", function(){
     index = $(this).parent(".slider").index();
     let imgBg = $(this).find(".bg").css("background");
+    let imgSrc = $(this).find(".model img").attr("src");
 
-    console.log(imgBg);
     if(index > 2) index = index - num + 1;
     
+    $pic.find(".bg").css({background: imgBg});
+    $pic.find(".model img").attr({src: imgSrc});
     $img.eq(index).css({opacity: 0});
     $pic.css(picPos[index]);
     setTimeout(function(){
@@ -82,8 +84,8 @@ $img.on("click", function(){
 $close.on("click", function(e){
     e.preventDefault();
 
-    $img.eq(index).css({opacity: 1});
     $pic.css(picPos[index]);
+    $img.eq(index).css({opacity: 1});
     $(".wrap").removeClass("on");
     $detail.fadeOut(1000);
 });

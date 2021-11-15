@@ -35,7 +35,8 @@ a {
 #visual {
   width: 100%;
   height: calc(100vh - 71px);
-  position: relative; }
+  position: relative;
+  overflow: hidden; }
   #visual h1 {
     display: inline-block;
     font: lighter 24px/1 'arial';
@@ -235,11 +236,21 @@ a {
       height: 20vw;
       background: #bbb;
       transition: 1s; }
-      #visual .detail .pic img {
+      #visual .detail .pic .bg {
         width: 100%;
         height: 100%;
-        object-fit: cover;
         filter: saturate(50%); }
+      #visual .detail .pic .model {
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        transform: translateX(-50%);
+        width: 100%;
+        height: 100%; }
+        #visual .detail .pic .model img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain; }
     #visual .detail .con {
       width: 100%;
       height: 100%;
