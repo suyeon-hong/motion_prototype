@@ -94,11 +94,11 @@ body{
                     transition: 2s;
 
                     &.front{
-                        z-index: 1;
+                        z-index: 2;
                         transform: rotateY(180deg);
                     }
                     &.back{
-                        z-index: 2;
+                        z-index: 1;
 
                         h1{
                             border-bottom: none;
@@ -283,12 +283,12 @@ body{
             .inner{
                 opacity: 1;
 
-                .pic{
-                    width: 750px;
-                    height: 100%;
-                    left: 150px;
-                    bottom: 0;
-                }
+                // .pic{
+                //     width: 750px;
+                //     height: 100%;
+                //     left: 150px;
+                //     bottom: 0;
+                // }
                 .con{
                     h1::before, h2::after{
                         right: 0;

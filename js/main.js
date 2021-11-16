@@ -78,27 +78,68 @@ $btns.on("click", function(e){
     $wrap.eq(i).fadeIn();
 })
 
+$section.on("mouseenter", function(){
+    clearInterval(timer3);
+    $section.addClass("on");
+
+});
+
+$section.on("mouseleave", function(){
+    timer3 = setInterval(function(){
+        rotate();
+    }, speed*3);
+});
 
 
 //visual detail page
 const $btnClose = $("#visual .detail .close");
 const $img = $("#visual .wrapbox img")
+let index;
+let imgPos = [
+    {
+        width: "250px",
+        height: "280px",
+        left: "20%",
+        bottom: "30px"
+    },
+    {
+        width: "250px",
+        height: "280px",
+        left: "40%",
+        bottom: "30px"
+    },
+    {
+        width: "250px",
+        height: "280px",
+        left: "60%",
+        bottom: "30px"
+    },
+]
 
 $img.on("click", function(e){
     e.preventDefault();
     let imgSrc = $(this).attr("src");
-    let index = $(this).closest("article").index();
-    let tit1 = $("#visual .wrapbox >.wrap").eq(index).find("article").eq(index).find("h2").text();
-    let tit2 = $("#visual .wrapbox >.wrap").eq(index).find("article").eq(index).find("li").eq(0).text();
-    let desc = $("#visual .wrapbox >.wrap").eq(index).find("article").eq(index).find(".wrap p").text();
+    index = $(this).closest("section").index();
+    let tit1 = $("#visual .wrapbox >.wrap").eq(index).find("section").eq(index).find("h2").text();
+    let tit2 = $("#visual .wrapbox >.wrap").eq(index).find("section").eq(index).find("li").eq(0).text();
+    let desc = $("#visual .wrapbox >.wrap").eq(index).find("section").eq(index).find(".wrap p").text();
 
 
+    $("#visual .detail .pic").css(imgPos[index]);
     $("#visual .detail .pic img").attr({src: imgSrc});
     $("#visual .detail .thumb img").attr({src: imgSrc});
     $("#visual .detail h1").text(tit1);
     $("#visual .detail h2").text(tit2);
     $("#visual .detail .con p").text(desc);
 
+    setTimeout(function(){
+        $(".detail .pic").css({
+            width: "750px",
+            height: "100%",
+            left: "150px",
+            bottom: 0
+        });
+    }, 100);
     $("#visual .detail").fadeIn(0, function(){
         $("#visual .detail").addClass("on");
     });
@@ -108,6 +149,7 @@ $img.on("click", function(e){
 $btnClose.on("click", function(e){
     e.preventDefault();
 
+    $("#visual .detail .pic").css(imgPos[index]);
     $("#visual .detail").removeClass("on");
     $("#visual .detail").fadeOut(1000);
 });
