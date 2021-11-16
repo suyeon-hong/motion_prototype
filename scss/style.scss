@@ -130,6 +130,7 @@ $mobile : 539px;
                                 width: 100%;
                                 height: 100%;
                                 object-fit: cover;
+                                filter: saturate(50%);
                             }
                         }
                         &:hover{
