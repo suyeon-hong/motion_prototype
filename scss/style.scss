@@ -121,8 +121,7 @@ $mobile : 539px;
                             background-size: cover;
                         }
                         .model{
-                            width: 200px;
-                            height: 450px;
+                            height: 30vw;
                             position: absolute;
                             bottom: 0;
                             left: 0;
@@ -269,8 +268,8 @@ $mobile : 539px;
             transition: 1s;
 
             .bg{
-                width: 25vw;
-                height: 20vw;
+                width: 40vw;
+                height: 100%;
                 filter: grayscale(80%) sepia(20%);
             }
             .model{
